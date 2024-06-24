@@ -21,4 +21,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/login',[MainApiController::class,'login']);
 Route::post('/register',[MainApiController::class,'register']);
 Route::middleware('auth:sanctum')->get('/home',[MainApiController::class,'home']);
+Route::middleware('auth:sanctum')->post('/like',[MainApiController::class,'like']);
+Route::middleware('auth:sanctum')->post('/message',[MainApiController::class,'message']);
+Route::middleware('auth:sanctum')->post('/message-show',[MainApiController::class,'messageshow']);
+Route::middleware('auth:sanctum')->post('/search',[MainApiController::class,'search']);
 // Route::middleware('auth:sanctum')->get('/home',[MainApiController::class,'home']);
