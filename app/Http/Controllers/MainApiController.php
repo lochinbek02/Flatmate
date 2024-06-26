@@ -153,5 +153,21 @@ class MainApiController extends Controller
         $response = $query->get();
         return response()->json($response);
     }
+    public function update(Request $request)
+    {
+        $user_id= $request->user()->id;
+        
+        $array=[];
+        foreach($request->all() as $key => $value){
+            if($value){
+                $array[$key]=$value;
+                
+                
+            }
+        }
+        $response=InformationModel::where('user_id',$user_id)->update($array);
+
+        return response()->json($response);
+    }
 
 }
